@@ -1,0 +1,25 @@
+{
+  "name": "pikud",
+  "version": "0.0.1",
+  "description": "Easily create command-line apps",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register --recursive lib/**/*_test.js",
+    "test-cover": "node_modules/.bin/istanbul cover _mocha -- --compilers js:babel/register --recursive lib/**/*_test.js",
+    "test-watch": "npm test -- --watch",
+    "build": "rm -rf dist/** && node_modules/.bin/babel lib --out-dir dist --ignore _test.js"
+  },
+  "author": "Jason Raede",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "chai": "^3.3.0",
+    "expect": "^1.12.2",
+    "istanbul": "^0.3.21",
+    "mocha": "^2.3.3"
+  },
+  "dependencies": {
+    "table": "^3.7.0",
+    "underscore": "^1.8.3"
+  }
+}
