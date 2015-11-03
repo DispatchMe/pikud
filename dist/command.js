@@ -121,7 +121,8 @@ var Command = (function () {
 
       // If this is the GLOBAL PARENT, then we need to potentially strip some stuff from the input
       if (!process._inCommand) {
-        if (input[0] === 'node') {
+        // Fix for NVM that uses absolute path to a different node
+        if (input.substr(-4) === 'node') {
           input.shift();
         }
 
@@ -159,7 +160,7 @@ var Command = (function () {
       if (!this.params.action) {
         throw new Error('No action defined for command ' + this.name);
       } else {
-        return this.params.action(input, flags);
+        return this.params.action.call(this, input, flags);
       }
     }
   }]);

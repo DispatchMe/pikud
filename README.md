@@ -20,6 +20,8 @@ Each command also automatically has a **help** flag (`--help` or `-h`) which wil
 ### Actions
 If a command has no sub-commands then it must have an `action`. The `action` takes any arguments passed via command line as well as the flags that were parsed. An action can either return a value, in which case that value will be written to the console at the end of execution, OR a `Promise`. If it returns a `Promise`, then `pikud` will handle it asynchronously.
 
+Actions are bound to their commands using `Function.call`, so you can introspect the command or run `this.help()` to display the help text.
+
 ## Examples
 
 ### Single command
