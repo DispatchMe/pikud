@@ -1,7 +1,10 @@
 pikud
 ======
-
 Create UNIX-style CLI applications in Node
+
+_pee-kood_ - Hebrew (not Danish, although I encourage you to look that up if you want a good laugh) for "command"
+
+Inspired by [https://github.com/codegangsta/cli](cli) 
 
 ## Installation
 ```bash
@@ -12,7 +15,21 @@ $ npm install --save pikud
 A CLI app built with `pikud` consists of either a single command or unlimited nested commands. Each command can have its own flags. Flags are inherited from parent commands and can be overridden on the child if the child allows the same flag.
 
 ### Flags
-Flags are defined by a `FlagSet`, which consists of any mix of `StringFlag`, `NumberFlag`, or `BoolFlag`. See below examples
+Flags are defined by a `FlagSet`, which consists of any mix of `StringFlag`, `NumberFlag`, or `BoolFlag`. See below examples.
+
+#### Multiple
+If you set `multiple:true` when defining a `StringFlag` or `NumberFlag`, the flag will be parsed as an array rather than a single value (think Docker's `-e` flag). For example:
+
+```
+new StringFlag('environment', {
+  alias:'e',
+  multiple:true
+});
+```
+
+```bash
+$ myapp -e "foo=bar" -e "baz=bing" -e "boop=scoop"
+```
 
 ### Help
 Each command also automatically has a **help** flag (`--help` or `-h`) which will show the command's usage in a nice little table.
