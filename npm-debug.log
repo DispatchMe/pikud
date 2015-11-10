@@ -1,0 +1,26 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.14.4
+3 info using node@v0.10.40
+4 verbose node symlink /usr/local/bin/node
+5 verbose publish [ '.' ]
+6 verbose stack Error: Invalid version: "0.1,0"
+6 verbose stack     at Object.module.exports.fixVersionField (/usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/fixer.js:186:13)
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:32:38
+6 verbose stack     at Array.forEach (native)
+6 verbose stack     at normalize (/usr/local/lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js:31:15)
+6 verbose stack     at final (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:338:5)
+6 verbose stack     at then (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:113:5)
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:300:12
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:76:16
+6 verbose stack     at fs.js:272:14
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:42:10
+7 verbose cwd /Users/raede/dev/dispatch/pure/pikud
+8 error Darwin 15.0.0
+9 error argv "node" "/usr/local/bin/npm" "publish"
+10 error node v0.10.40
+11 error npm  v2.14.4
+12 error Invalid version: "0.1,0"
+13 error If you need help, you may report this error at:
+13 error     <https://github.com/npm/npm/issues>
+14 verbose exit [ 1, true ]
